@@ -12,7 +12,7 @@ document.getElementById('homeBtn').addEventListener('click', function() {
     document.getElementById('output').textContent = 'Navigating to Home Page...';
 });
 
-document.getElementById('chordPracticeBtn').addEventListener('click', function() {
+document.getElementById('guitarChordBtn').addEventListener('click', function() {
     // Load the chord practice section when the button is clicked
     document.getElementById('output').textContent = 'Loading Chord Practice...';
     loadChordPractice();
@@ -33,5 +33,15 @@ function loadChordPractice() {
             console.error('Error loading chord practice:', error);
             document.getElementById('chordPracticeOutput').textContent = 'Error loading chord practice.';
         }); // Handle any errors that occur during the fetch operation
+
+    // guitarChordOutput.value = ''; // Clear the guitar chord output area
+    // guitarChordOutput.value = data.randomChord; // Display the random chord in the textarea with id 'guitarChordOutput'
+    // guitarChordOutput.textContent = randomChord; // Set the text content of the guitar chord output area to the random chord
+    document.getElementById('randomChordOutput').textContent = 'Random chord practice will be displayed here.'; // placeholder text
+    // document.getElementById('randomChordOutput').textContent = 'randomChord'; // placeholder text
+
+    // alert(document.getElementById('randomChordOutput').textContent); // Alert the user with the random chord
+    console.log(document.getElementById('randomChordOutput').textContent); // Log the random chord to the console
+
 }
 
