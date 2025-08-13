@@ -1,3 +1,5 @@
+// guitar_main.js
+// the main JavaScript file for guitar practice
 document.getElementById('homeBtn').addEventListener('click', function() {
     // document.getElementById('output').textContent = 'Navigating to Homepage...';
 
