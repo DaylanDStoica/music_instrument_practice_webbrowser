@@ -1,5 +1,7 @@
-#DaylanDStoica
 # contains practice examples for practicing guitar pieces 
+
+# Owner: DaylanDStoica
+# Developer: Daylan Stoica, DaylanDStoica
 CHORD_TEXT_FILE = "guitar_chords_tab.txt"
 
 import random

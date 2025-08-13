@@ -1,5 +1,6 @@
 //homepage for the app
-// DaylanDStoica
+// Owner: DaylanDStoica
+// Developer: Daylan Stoica, DaylanDStoica
 // for handling musical instrument practice
 
 // handle the button presses, and create the page for the appropriate instrument practice    
