@@ -4,7 +4,14 @@
 // Developer: Daylan Stoica, DaylanDStoica
 
 CHORD_TEXT_FILE = "guitar_chords_tab.txt";
-
+CHORDS = [ E =  "022100",
+A =             "X02220",
+D =             "XX0232",
+C =             "X32010",
+G =             "320003",
+F_minor =       "022000",
+A_minor =       "X02210"
+]
 document.getElementById('homeBtn').addEventListener('click', function() {
     // document.getElementById('output').textContent = 'Navigating to Homepage...';
 
