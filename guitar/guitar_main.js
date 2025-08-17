@@ -22,10 +22,12 @@ document.getElementById('homeBtn').addEventListener('click', function() {
 
 document.getElementById('guitarChordBtn').addEventListener('click', function() {
     // Load the chord practice section when the button is clicked
-    document.getElementById('output').textContent = 'Loading Chord Practice...';
+    document.getElementById('output').textContent = 'Loading Chord Practice...'; // show that progress is being made
     // loadChordPractice();
     let randChord = getRandomChord()
-    document.getElementById('randomChordOutput').textContent = randChord;
+    document.getElementById('randomChordOutput').textContent = randChord; // display the random chord
+    // clear the output, so no longer saying loading chord practice
+    document.getElementById('output').textContent = '';
 });
 
 function loadChordPractice() {
