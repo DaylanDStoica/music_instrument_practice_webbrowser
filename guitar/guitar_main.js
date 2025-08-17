@@ -5,7 +5,7 @@
 
 const CHORD_TEXT_FILE = "guitar_chords_tab.txt";
 const CHORDS = [ E =  "022100",
-A =             "X02220",
+    A =             "X02220",
 D =             "XX0232",
 C =             "X32010",
 G =             "320003",
