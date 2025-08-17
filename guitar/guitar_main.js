@@ -3,8 +3,8 @@
 // Owner: DaylanDStoica
 // Developer: Daylan Stoica, DaylanDStoica
 
-CHORD_TEXT_FILE = "guitar_chords_tab.txt";
-CHORDS = [ E =  "022100",
+const CHORD_TEXT_FILE = "guitar_chords_tab.txt";
+const CHORDS = [ E =  "022100",
 A =             "X02220",
 D =             "XX0232",
 C =             "X32010",
@@ -21,8 +21,9 @@ document.getElementById('homeBtn').addEventListener('click', function() {
 
 document.getElementById('guitarChordBtn').addEventListener('click', function() {
     // Load the chord practice section when the button is clicked
-    document.getElementById('randomChordOutput').textContent = 'Loading Chord Practice...';
-    loadChordPractice();
+    document.getElementById('output').textContent = 'Loading Chord Practice...';
+    // loadChordPractice();
+    document.getElementById('randomChordOutput').textContent = getRandomChord();
 });
 
 function loadChordPractice() {
@@ -46,6 +47,14 @@ function loadChordPractice() {
 
     // alert(document.getElementById('randomChordOutput').textContent); // Alert the user with the random chord
     // console.log(document.getElementById('randomChordOutput').textContent); // Log the random chord to the console
+
+    function getRandomChord(){
+        const chords = Object.keys(CHORDS);
+        const randomChord = chords[Math.floor(Math.random() * chords.length)];
+        // console.log('Random Chord:', randomChord);
+        alert('Random Chord: ' + randomChord); // Alert the user with the random chord
+        return randomChord;
+    }
 
 }
 
