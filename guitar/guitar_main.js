@@ -24,7 +24,8 @@ document.getElementById('guitarChordBtn').addEventListener('click', function() {
     // Load the chord practice section when the button is clicked
     document.getElementById('output').textContent = 'Loading Chord Practice...';
     // loadChordPractice();
-    document.getElementById('randomChordOutput').textContent = getRandomChord();
+    let randChord = getRandomChord()
+    document.getElementById('randomChordOutput').textContent = randChord;
 });
 
 function loadChordPractice() {
@@ -49,13 +50,14 @@ function loadChordPractice() {
     // alert(document.getElementById('randomChordOutput').textContent); // Alert the user with the random chord
     // console.log(document.getElementById('randomChordOutput').textContent); // Log the random chord to the console
 
-    function getRandomChord(){
-        const chords = Object.keys(CHORDS);
-        const randomChord = chords[Math.floor(Math.random() * chords.length)];
-        // console.log('Random Chord:', randomChord);
-        alert('Random Chord: ' + randomChord); // Alert the user with the random chord
-        return randomChord;
-    }
-
 }
 
+
+function getRandomChord(){
+    // const chords = Object.keys(CHORDS);
+    const chords = CHORDS; // Use the predefined CHORDS array
+    const randomChord = chords[Math.floor(Math.random() * chords.length)]; // Select a random chord from the array
+    // console.log('Random Chord:', randomChord);
+    alert('Random Chord: ' + randomChord); // Alert the user with the random chord
+    return randomChord;
+    }
