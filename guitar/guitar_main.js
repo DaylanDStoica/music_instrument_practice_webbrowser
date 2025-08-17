@@ -57,7 +57,6 @@ function getRandomChord(){
     // const chords = Object.keys(CHORDS);
     const chords = CHORDS; // Use the predefined CHORDS array
     const randomChord = chords[Math.floor(Math.random() * chords.length)]; // Select a random chord from the array
-    // console.log('Random Chord:', randomChord);
-    alert('Random Chord: ' + randomChord); // Alert the user with the random chord
+
     return randomChord;
-    }
+}
