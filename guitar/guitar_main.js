@@ -65,11 +65,15 @@ function getRandomChord(){
     return randomChord;
 }
 
+/*
 function playRandomChord(){
     // using the global varaible GlobalRandomChord, play the associated audio file for the chord
+    // to aid in audio training.
     // activated with the HTML PlayChordAudio button
+    alert("chord audio button pressesd: " + GlobalRandomChord)
     const audio = new Audio(`../audio/${GlobalRandomChord}.mp3`);
     audio.play();
 }
 
 document.getElementById('playChordAudioBtn').addEventListener('click', playRandomChord);
+*/
