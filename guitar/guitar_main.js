@@ -78,14 +78,43 @@ function playRandomChord(){
 document.getElementById('playChordAudioBtn').addEventListener('click', playRandomChord);
 */
 
+let AutoDisplayToggle = false; // Initialize the auto-loop toggle state
 document.getElementById('autoLoopSwitch').addEventListener('change', function() {
     // Handle the auto-loop switch change event
     // TODO: Implement auto-looping functionality
-    if (this.checked) {
-        // Start auto-looping chords
-        alert("Auto-looping enabled");
-    } else {
-        // Stop auto-looping chords
-        alert("Auto-looping disabled");
-    }
+    AutoDisplayToggle = !AutoDisplayToggle
+    // if (this.checked) {
+    //     // Start auto-looping chords
+    //     // alert("Auto-looping enabled");
+    //     alert("Auto-looping enabled. New chord every 5 seconds.");
+    // } else {
+    //     // Stop auto-looping chords
+    //     alert("Auto-looping disabled");
+    // }
+
+    // give a time delay for values to update to display on alerts
+    // setTimeout( pass, 100)
+
+    
+//     if (AutoDisplayToggle) {
+//         // Start auto-looping chords
+//         // alert("Auto-looping enabled");
+//         alert("Auto-looping enabled. New chord every 5 seconds.");
+//         setInterval(() => {
+//             let randChord = getRandomChord();
+//             document.getElementById('randomChordOutput').textContent = randChord; // display the random chord
+//         }, 5000);
+//     } else {
+//         // Stop auto-looping chords
+//         alert("Auto-looping disabled");
+//     }
 });
+
+// Auto-display interval 
+let time_interval = 5;
+setInterval(() => {
+    if (AutoDisplayToggle) {
+        let randChord = getRandomChord();
+        document.getElementById('randomChordOutput').textContent = randChord; // display the random chord
+    }
+}, time_interval * 1000);
