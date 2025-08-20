@@ -30,6 +30,13 @@
         font-size: 16px;
         cursor: pointer;
     }
+    #GuitarImg {
+        /* position: relative; */
+        /* right: 30%; */
+        /* clear: right; */
+        width: 300px;
+        height: auto;
+    }
 </style>
 <body>
     <h1>Welcome to Guitar Practice: 6-Strings</h1>
@@ -55,8 +62,17 @@
     <!-- <button id = "playChordAudioBtn">Play Chord Audio</button> --> 
     <!-- this button will play the audio for the currently displayed chord -->
 
+    <!-- toggle switch to autoloop new chords-->
+    <label class="switch" id="autoLoopSwitch">
+        <text>Auto Loop Chords </text>
+        <input type="checkbox">
+        <span class="slider"></span>
+    </label>
+
+    <br> 
+
     <!-- insert an image of a guitar for visual reference-->
-    <img src="guitar_img1.jpg" alt="GuitarImg" style="width:300px;height:auto;">
+    <img src="guitar_img1.jpg" alt="GuitarImg">
 
     <script src="guitar_main.js"></script>
 </body>

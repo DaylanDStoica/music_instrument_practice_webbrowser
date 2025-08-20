@@ -77,3 +77,15 @@ function playRandomChord(){
 
 document.getElementById('playChordAudioBtn').addEventListener('click', playRandomChord);
 */
+
+document.getElementById('autoLoopSwitch').addEventListener('change', function() {
+    // Handle the auto-loop switch change event
+    // TODO: Implement auto-looping functionality
+    if (this.checked) {
+        // Start auto-looping chords
+        alert("Auto-looping enabled");
+    } else {
+        // Stop auto-looping chords
+        alert("Auto-looping disabled");
+    }
+});
