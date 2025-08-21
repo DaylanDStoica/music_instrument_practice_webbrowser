@@ -116,5 +116,12 @@ setInterval(() => {
     if (AutoDisplayToggle) {
         let randChord = getRandomChord();
         document.getElementById('randomChordOutput').textContent = randChord; // display the random chord
+        // create a blinking flash to tell when a change occurs
+        // <blink>document.getElementById('randomChordOutput').style.backgroundColor = 'yellow';</blink>
+        let blinking_text = document.getElementById('randomChordOutput');
+        blinking_text.style.backgroundColor = 'yellow';
+        setTimeout(() => {
+            blinking_text.style.backgroundColor = '';
+        }, 500);
     }
 }, time_interval * 1000);
