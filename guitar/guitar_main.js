@@ -65,7 +65,7 @@ function getRandomChord(){
     return randomChord;
 }
 
-
+/*
 function playRandomChordSound(){
     // using the global varaible GlobalRandomChord, play the associated audio file for the chord
     // to aid in audio training.
@@ -77,6 +77,7 @@ function playRandomChordSound(){
 
 document.getElementById('playChordAudioBtn').addEventListener('click', playRandomChordSound);
 // event listener for playing an audio file
+*/
 
 // Add an event listener to the auto-loop switch
 let AutoDisplayToggle = false; // Initialize the auto-loop toggle state
