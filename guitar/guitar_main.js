@@ -65,18 +65,17 @@ function getRandomChord(){
     return randomChord;
 }
 
-/*
-function playRandomChord(){
+
+function playRandomChordSound(){
     // using the global varaible GlobalRandomChord, play the associated audio file for the chord
     // to aid in audio training.
     // activated with the HTML PlayChordAudio button
-    alert("chord audio button pressesd: " + GlobalRandomChord)
-    const audio = new Audio(`../audio/${GlobalRandomChord}.mp3`);
+    // alert("chord audio button pressed: " + GlobalRandomChord)
+    const audio = new Audio(`sounds_folder/${GlobalRandomChord}.mp3`);
     audio.play();
 }
 
-document.getElementById('playChordAudioBtn').addEventListener('click', playRandomChord);
-*/
+document.getElementById('playChordAudioBtn').addEventListener('click', playRandomChordSound);
 
 let AutoDisplayToggle = false; // Initialize the auto-loop toggle state
 document.getElementById('autoLoopSwitch').addEventListener('change', function() {
