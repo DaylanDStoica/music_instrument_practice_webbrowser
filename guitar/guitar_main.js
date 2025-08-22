@@ -124,4 +124,19 @@ setInterval(() => {
             blinking_text.style.backgroundColor = '';
         }, 500);
     }
+    parseTheChord();
 }, time_interval * 1000);
+
+function parseTheChord(){
+    // parse out the chord name and its properties
+    let chord = GlobalRandomChord;
+    let chordParts = chord.split(' '); // Split the chord string into name and notes
+    let chordName = chordParts[0];
+    let chordNotes = chordParts[1].split(','); // Split the notes by comma
+    let chordFingers = chordParts[2].split(','); // Split the fingers by comma
+
+    // Display the parsed chord information in console log for developers
+    console.log("Chord Name: " + chordName);
+    console.log("Chord Notes: " + chordNotes.join(', '));
+    console.log("Chord Fingers: " + chordFingers.join(', '));
+}
