@@ -81,33 +81,7 @@ document.getElementById('playChordAudioBtn').addEventListener('click', playRando
 let AutoDisplayToggle = false; // Initialize the auto-loop toggle state
 document.getElementById('autoLoopSwitch').addEventListener('change', function() {
     // Handle the auto-loop switch change event
-    // TODO: Implement auto-looping functionality
     AutoDisplayToggle = !AutoDisplayToggle
-    // if (this.checked) {
-    //     // Start auto-looping chords
-    //     // alert("Auto-looping enabled");
-    //     alert("Auto-looping enabled. New chord every 5 seconds.");
-    // } else {
-    //     // Stop auto-looping chords
-    //     alert("Auto-looping disabled");
-    // }
-
-    // give a time delay for values to update to display on alerts
-    // setTimeout( pass, 100)
-
-    
-//     if (AutoDisplayToggle) {
-//         // Start auto-looping chords
-//         // alert("Auto-looping enabled");
-//         alert("Auto-looping enabled. New chord every 5 seconds.");
-//         setInterval(() => {
-//             let randChord = getRandomChord();
-//             document.getElementById('randomChordOutput').textContent = randChord; // display the random chord
-//         }, 5000);
-//     } else {
-//         // Stop auto-looping chords
-//         alert("Auto-looping disabled");
-//     }
 });
 
 // Auto-display interval 
