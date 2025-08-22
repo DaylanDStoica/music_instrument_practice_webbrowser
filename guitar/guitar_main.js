@@ -5,13 +5,13 @@
 
 const CHORD_TEXT_FILE = "guitar_chords_tab.txt";
 const CHORDS = [ 
-"E =  022100",
-"A =  X02220",
-"D =  XX0232",
-"C =  X32010",
-"G =  320003",
-"F_minor =  022000",
-"A_minor =  X02210"
+"E = 022100",
+"A = X02220",
+"D = XX0232",
+"C = X32010",
+"G = 320003",
+"F_minor = 022000",
+"A_minor = X02210"
 ]
 document.getElementById('homeBtn').addEventListener('click', function() {
     // document.getElementById('output').textContent = 'Navigating to Homepage...';
@@ -76,7 +76,9 @@ function playRandomChordSound(){
 }
 
 document.getElementById('playChordAudioBtn').addEventListener('click', playRandomChordSound);
+// event listener for playing an audio file
 
+// Add an event listener to the auto-loop switch
 let AutoDisplayToggle = false; // Initialize the auto-loop toggle state
 document.getElementById('autoLoopSwitch').addEventListener('change', function() {
     // Handle the auto-loop switch change event
@@ -106,7 +108,7 @@ function parseTheChord(){
     let chordParts = chord.split(' '); // Split the chord string into name and notes
     let chordName = chordParts[0];
     let chordNotes = chordParts[1].split(','); // Split the notes by comma
-    let chordFingers = chordParts[3].split(','); // Split the fingers by comma
+    let chordFingers = chordParts[2].split(','); // Split the fingers by comma
 
     // Display the parsed chord information in console log for developers
     console.log("Chordparts: " + chordParts.join(', '));
