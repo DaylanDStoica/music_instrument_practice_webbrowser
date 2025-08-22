@@ -46,26 +46,20 @@ function loadChordPractice() {
             document.getElementById('randomChordOutput').textContent = 'Error loading chord practice.';
         }); // Handle any errors that occur during the fetch operation
 
-    // document.getElementById('randomChordOutput').textContent = 'Random chord practice will be displayed here.'; // placeholder text
-    // document.getElementById('randomChordOutput').textContent = 'randomChord'; // placeholder text
-
-    // alert(document.getElementById('randomChordOutput').textContent); // Alert the user with the random chord
     // console.log(document.getElementById('randomChordOutput').textContent); // Log the random chord to the console
 
 }
 
 let GlobalRandomChord = CHORDS[0]
 function getRandomChord(){
-    // const chords = Object.keys(CHORDS);
     const chords = CHORDS; // Use the predefined CHORDS array
     const randomChord = chords[Math.floor(Math.random() * chords.length)]; // Select a random chord from the array
-    // alert("* " + Math.floor(Math.random() * chords.length) ); // random numbers
-    // alert("% " + Math.floor(Math.random() % chords.length) ); // consistently 0
     GlobalRandomChord = randomChord; // set the global variable, usable for other uses
     return randomChord;
 }
 
 /*
+//add audio playback functionality
 function playRandomChordSound(){
     // using the global varaible GlobalRandomChord, play the associated audio file for the chord
     // to aid in audio training.
