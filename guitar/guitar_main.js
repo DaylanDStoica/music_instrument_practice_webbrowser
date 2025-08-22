@@ -133,10 +133,24 @@ function parseTheChord(){
     let chordParts = chord.split(' '); // Split the chord string into name and notes
     let chordName = chordParts[0];
     let chordNotes = chordParts[1].split(','); // Split the notes by comma
-    let chordFingers = chordParts[2].split(','); // Split the fingers by comma
+    let chordFingers = chordParts[3].split(','); // Split the fingers by comma
 
     // Display the parsed chord information in console log for developers
+    console.log("Chordparts: " + chordParts.join(', '));
     console.log("Chord Name: " + chordName);
     console.log("Chord Notes: " + chordNotes.join(', '));
     console.log("Chord Fingers: " + chordFingers.join(', '));
+
+    // let chordFingersArray = chordFingers.split('');
+    // console.log("Chord Fingers Array: " + chordFingersArray);
+
+    return { // return the parsed components
+        name: chordName,
+        notes: chordNotes,
+        fingers: chordFingers
+    };
 }
+
+// using the parsed chord information, display an overlay on the guitar image
+// on the appropriate fret and string positions
+// TODO: Implement the overlay display logic
