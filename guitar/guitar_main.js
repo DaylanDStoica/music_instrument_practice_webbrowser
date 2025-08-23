@@ -141,7 +141,7 @@ function updateFingerDots() {
         let fingerPosition = fingerPositions[i - 1];
 
         // Move the dot along the vertical lines
-        if (fingerPosition !== '0') {
+        if (fingerPosition !== 'X') {
             dot.style.top = `${getFretPosition(fingerPosition)}px`;
             dot.style.visibility = 'visible';
         } else {
