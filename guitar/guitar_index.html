@@ -44,6 +44,25 @@
         right: 0;
         top: 0;
     }
+    /* the six 6 strings of a guitar, intended for finger placement visualization */
+    /* string1, string2, string3, string4, string5, string6
+     */
+     .string1, .string2, .string3, .string4, .string5, .string6 {
+         position: absolute;
+         border-left: 15px solid silver;
+         /* width: 100%; */
+         height: 300px;
+         left: 70%;
+         background-color: transparent;
+         border: 1px solid black;
+         top: 150px;
+     }
+     .string2 { left: 35% }
+     .string1 { left: 30% }
+     .string3 { left: 40% }
+     .string4 { left: 45% }
+     .string5 { left: 50% }
+     .string6 { left: 55% }
 </style>
 <body>
     <h1>Welcome to Guitar Practice: 6-Strings</h1>
@@ -78,6 +97,13 @@
     </label>
 
     <br> 
+
+    <div class="string1"></div>
+    <div class="string2"></div>
+    <div class="string3"></div>
+    <div class="string4"></div>
+    <div class="string5"></div>
+    <div class="string6"></div>
 
     <!-- insert an image of a guitar for visual reference-->
     <img src="guitar_img1.jpg" alt="GuitarImg" id="GuitarImg">
