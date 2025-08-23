@@ -104,6 +104,16 @@
      .fret-line4::before { content: "4"; left: 100%; transform: translateX(-50%); }
      .fret-line5::before { content: "5"; left: 100%; transform: translateX(-50%); }
 
+     .dot {
+         position: absolute;
+         width: 10px;
+         height: 10px;
+         background-color: red;
+         border-radius: 50%;
+         /* Center the dot on the string */
+         left: 50%;
+         transform: translateX(-50%);
+     }
 </style>
 <body>
     <h1>Welcome to Guitar Practice: 6-Strings</h1>
@@ -154,6 +164,7 @@
     <div class="fret-line4"></div>
     <div class="fret-line5"></div>
 
+    <div dot id="dot1" class="dot" style="top: 240px; left: 30%;"></div>
     <!-- insert an image of a guitar for visual reference-->
     <img src="guitar_img1.jpg" alt="GuitarImg" id="GuitarImg">
 
