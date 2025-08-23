@@ -94,7 +94,8 @@ setInterval(() => {
             blinking_text.style.backgroundColor = '';
         }, 500);
     }
-    parseTheChord();
+    // parseTheChord();
+    updateFingerDots(); // update the finger dot positions on the guitar image
 }, time_interval * 1000);
 
 function parseTheChord(){
@@ -126,6 +127,25 @@ function parseTheChord(){
 
 // TODO: develop the finger-dot placement and action functions
 //1. move the dots along the vertical lines
-// 2. make the dot inivisible when the string reads 0 
-// 3. decide on what visual to show when the gstring is menat to be skipped entirely
+// 2. make the dot inivisible when the string reads '0' 
+// 3. decide on what visual to show when the gstring is meant to be skipped entirely, 'X' perhaps a muted color for the string
 
+function updateFingerDots() {
+    const chordInfo = parseTheChord(); // Get the parsed chord information
+    // Get the finger placements from the chord information
+    let fingerPositions = chordInfo.fingers;
+
+    // Loop through each string and update the dot positions
+    for (let i = 1; i <= 6; i++) {
+        let dot = document.getElementById(`dot${i}`);
+        let fingerPosition = fingerPositions[i - 1];
+
+        // Move the dot along the vertical lines
+        if (fingerPosition !== '0') {
+            dot.style.top = `${getFretPosition(fingerPosition)}px`;
+            dot.style.visibility = 'visible';
+        } else {
+            dot.style.visibility = 'hidden';
+        }
+    }
+}
