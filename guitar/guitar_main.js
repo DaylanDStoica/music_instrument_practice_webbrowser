@@ -123,20 +123,9 @@ function parseTheChord(){
 
 // using the parsed chord information, display an overlay on the guitar image
 // on the appropriate fret and string positions
-// TODO: Implement the overlay display logic
-/*
-1. get dimensions and postion of the guitar image
-2. develop formula for determing the fret placements on the different strings
-3. develop how to read the global ChordString and how they align
-4. develop a method for displaying the finger placements on the guitar image
-        current goto representative is a bright circle on the fret placement on each string
- 
 
-*/
-// Object FingerPlacement = {
-//     function Initialize() {
-//         // Initialize finger placement on the guitar neck
-//         pass;
-//     };
-// };
+// TODO: develop the finger-dot placement and action functions
+//1. move the dots along the vertical lines
+// 2. make the dot inivisible when the string reads 0 
+// 3. decide on what visual to show when the gstring is menat to be skipped entirely
 
