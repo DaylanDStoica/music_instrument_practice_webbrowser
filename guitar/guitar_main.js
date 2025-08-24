@@ -135,10 +135,10 @@ function parseTheChord(){
 // on the appropriate fret and string positions
 
 // TODO: develop the finger-dot placement and action functions
-//1. move the dots along the vertical lines
-// 2. make the dot inivisible when the string reads '0' 
-// 3. decide on what visual to show when the gstring is meant to be skipped entirely, 'X' perhaps a muted color for the string
-
+// Checked 1. move the dots along the vertical lines
+// Checked 2. make the dot inivisible when the string reads '0' 
+// Checked3. decide on what visual to show when the gstring is meant to be skipped entirely, 'X' perhaps a muted color for the string
+//    a gray blob stretched across the string
 
 function updateFingerDots() {
     const chordInfo = parseTheChord(); // Get the parsed chord information
@@ -147,8 +147,7 @@ function updateFingerDots() {
 
     console.log("fingerPostions type: " + typeof fingerPositions); // object
     // fingerPostions currently read as object
-    // Checked TODO: convert fingerPostions to a sting
-    // trying stringify
+    // stringify to convert object to string
     fingerPositions = JSON.stringify(fingerPositions);
     console.log("fingerPostions type: " + typeof fingerPositions); // string
     // fingerPostions still has unwanted chars, such '[' and ' ' messing up the calculations. Removing them
@@ -192,11 +191,11 @@ function updateFingerDots() {
         console.log(`Dot ${i} finger position: ${fingerPosition}, as number: ${fingerPositionNum}`);
         // let top = 200 + (fret_distance * (fingerPositionNum ));
         let top = 200 + (fret_distance * (fingerPositionNum - 1)); // adjusted to -1 to match the visual positions
-        // problem: currently returns a pointer rather than usable interger
+        // set the dot position
         dot.style.top = `${top}px`;
         console.log(`Dot ${i} position: ${dot.style.top}`);
 
         // set the visual dot to the changed position, from the dot loop variable 
-        // getElementById(`dot${i}`).style.top = dot.style.top;
+
     }
 }
