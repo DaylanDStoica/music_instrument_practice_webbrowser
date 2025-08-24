@@ -160,14 +160,19 @@ function updateFingerDots() {
         } else {
             dot.style.visibility = 'visible';
         }
-        if ( fingerPosition == 'X') {
+        if ( fingerPosition == 'X') { // mute the string, do not play
             // dot.style.visibility = 'hidden';
             // mark the string as muted
             dot.style.backgroundColor = 'lightgray';
+            dot.style.height = '400px';
+            dot.style.top = '175px';
             continue; // skip to next fingerPosition loop
         }
         else {
             dot.style.backgroundColor = 'red'; // reset the color to red if not muted
+            // reset the dimensions of the dot, 15px    
+            dot.style.width = '15px';
+            dot.style.height = '15px';
         }
         console.log('Visibility: ' + dot.style.visibility + ', Background Color: ' + dot.style.backgroundColor);
 
