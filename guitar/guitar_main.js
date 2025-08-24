@@ -132,9 +132,6 @@ function parseTheChord(){
 // 3. decide on what visual to show when the gstring is meant to be skipped entirely, 'X' perhaps a muted color for the string
 
 
-// Problem: the fingerPosition variable is not being used correctly
-// it is not separating a single character from the string
-// causing the conversion from string to number to fail
 function updateFingerDots() {
     const chordInfo = parseTheChord(); // Get the parsed chord information
     // Get the finger placements from the chord information
@@ -142,10 +139,11 @@ function updateFingerDots() {
 
     console.log("fingerPostions type: " + typeof fingerPositions); // object
     // fingerPostions currently read as object
-    // TODO: convert fingerPostions to a sting
+    // Checked TODO: convert fingerPostions to a sting
     // trying stringify
     fingerPositions = JSON.stringify(fingerPositions);
     console.log("fingerPostions type: " + typeof fingerPositions); // string
+    // fingerPostions still has unwanted chars, such '[' and ' ' messing up the calculations. Removing them
     // trying split to remove invalid chars 
     fingerPositions = fingerPositions.replace(/"/g, '').replace(/\[/g, '').replace(/\]/g, '');
     let fret_distance = 75; // Distance between frets in pixels
@@ -155,12 +153,7 @@ function updateFingerDots() {
         let fingerPosition = fingerPositions[i - 1]; // get a single character from the string
         console.log(`Dot ${i} finger position: ${fingerPosition}`);
         // Move the dot along the vertical lines
-        // if (fingerPosition !== 'X') {
-        //     dot.style.top = `${getFretPosition(fingerPosition)}px`;
-        //     dot.style.visibility = 'visible';
-        // } else {
-        //     dot.style.visibility = 'hidden';
-        // }
+
         if ( fingerPosition == '0') {
             dot.style.visibility = 'hidden';
             continue; // skip to next fingerPosition loop
@@ -183,9 +176,6 @@ function updateFingerDots() {
         // top = 200 + (75 * (fingerPositionNum)); in pixels
         let fingerPositionNum = Number(fingerPosition); // convert the finger position to a number
         console.log(`Dot ${i} finger position: ${fingerPosition}, as number: ${fingerPositionNum}`);
-        // dot.style.top = `${getFretPosition(fingerPositionNum)}px`;
-
-        // dot.style.top = `${200 + (fret_distance * (fingerPositionNum ))}px`;
         let top = 200 + (fret_distance * (fingerPositionNum ));
         // problem: currently returns a pointer rather than usable interger
         // dot.style.top = `${top}px`;
