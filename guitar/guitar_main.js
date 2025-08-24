@@ -28,6 +28,7 @@ document.getElementById('guitarChordBtn').addEventListener('click', function() {
     document.getElementById('randomChordOutput').textContent = randChord; // display the random chord
     // clear the output, so no longer saying loading chord practice
     document.getElementById('output').textContent = '';
+    updateFingerDots();
 });
 
 function loadChordPractice() {
@@ -50,7 +51,7 @@ function loadChordPractice() {
 
 }
 
-let GlobalRandomChord = CHORDS[0]
+var GlobalRandomChord = CHORDS[0]
 function getRandomChord(){
     const chords = CHORDS; // Use the predefined CHORDS array
     const randomChord = chords[Math.floor(Math.random() * chords.length)]; // Select a random chord from the array
@@ -130,22 +131,60 @@ function parseTheChord(){
 // 2. make the dot inivisible when the string reads '0' 
 // 3. decide on what visual to show when the gstring is meant to be skipped entirely, 'X' perhaps a muted color for the string
 
+
+// Problem: the fingerPosition variable is not being used correctly
+// it is not separating a single character from the string
+// causing the conversion from string to number to fail
 function updateFingerDots() {
     const chordInfo = parseTheChord(); // Get the parsed chord information
     // Get the finger placements from the chord information
     let fingerPositions = chordInfo.fingers;
 
+    console.log(typeof fingerPositions);
+    let fret_distance = 75; // Distance between frets in pixels
     // Loop through each string and update the dot positions
     for (let i = 1; i <= 6; i++) {
         let dot = document.getElementById(`dot${i}`);
-        let fingerPosition = fingerPositions[i - 1];
-
+        let fingerPosition = fingerPositions[i - 1]; // get a single character from the string
+        console.log(`Dot ${i} finger position: ${fingerPosition}`);
         // Move the dot along the vertical lines
-        if (fingerPosition !== 'X') {
-            dot.style.top = `${getFretPosition(fingerPosition)}px`;
-            dot.style.visibility = 'visible';
-        } else {
+        // if (fingerPosition !== 'X') {
+        //     dot.style.top = `${getFretPosition(fingerPosition)}px`;
+        //     dot.style.visibility = 'visible';
+        // } else {
+        //     dot.style.visibility = 'hidden';
+        // }
+        if ( fingerPosition == '0') {
             dot.style.visibility = 'hidden';
+            continue; // skip to next fingerPosition loop
+        } else {
+            dot.style.visibility = 'visible';
         }
+        if ( fingerPosition == 'X') {
+            // dot.style.visibility = 'hidden';
+            // mark the string as muted
+            dot.style.backgroundColor = 'lightgray';
+            continue; // skip to next fingerPosition loop
+        }
+        else {
+            dot.style.backgroundColor = 'red'; // reset the color to red if not muted
+        }
+        console.log('Visibility: ' + dot.style.visibility + ', Background Color: ' + dot.style.backgroundColor);
+
+        // Calculate the top position based on the fret number
+        // top = 200 + (fret_distance * (fingerPositionNum )); 
+        // top = 200 + (75 * (fingerPositionNum)); in pixels
+        let fingerPositionNum = Number(fingerPosition); // convert the finger position to a number
+        console.log(`Dot ${i} finger position: ${fingerPosition}, as number: ${fingerPositionNum}`);
+        // dot.style.top = `${getFretPosition(fingerPositionNum)}px`;
+
+        // dot.style.top = `${200 + (fret_distance * (fingerPositionNum ))}px`;
+        let top = 200 + (fret_distance * (fingerPositionNum ));
+        // problem: currently returns a pointer rather than usable interger
+        // dot.style.top = `${top}px`;
+        console.log(`Dot ${i} position: ${dot.style.top}`);
+
+        // set the visual dot to the changed position, from the dot loop variable 
+        // getElementById(`dot${i}`).style.top = dot.style.top;
     }
 }
