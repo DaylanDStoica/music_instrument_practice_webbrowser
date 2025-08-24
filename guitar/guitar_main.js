@@ -140,7 +140,14 @@ function updateFingerDots() {
     // Get the finger placements from the chord information
     let fingerPositions = chordInfo.fingers;
 
-    console.log(typeof fingerPositions);
+    console.log("fingerPostions type: " + typeof fingerPositions); // object
+    // fingerPostions currently read as object
+    // TODO: convert fingerPostions to a sting
+    // trying stringify
+    fingerPositions = JSON.stringify(fingerPositions);
+    console.log("fingerPostions type: " + typeof fingerPositions); // string
+    // trying split to remove invalid chars 
+    fingerPositions = fingerPositions.replace(/"/g, '').replace(/\[/g, '').replace(/\]/g, '');
     let fret_distance = 75; // Distance between frets in pixels
     // Loop through each string and update the dot positions
     for (let i = 1; i <= 6; i++) {
