@@ -26,6 +26,14 @@ document.getElementById('guitarChordBtn').addEventListener('click', function() {
     // loadChordPractice();
     let randChord = getRandomChord()
     document.getElementById('randomChordOutput').textContent = randChord; // display the random chord
+    
+    // create a blinking flash to tell when a change occurs
+    let blinking_text = document.getElementById('randomChordOutput');
+    blinking_text.style.backgroundColor = 'yellow';
+    setTimeout(() => {
+        blinking_text.style.backgroundColor = '';
+    }, 500);
+
     // clear the output, so no longer saying loading chord practice
     document.getElementById('output').textContent = '';
     updateFingerDots();
