@@ -174,11 +174,12 @@ function updateFingerDots() {
         // Calculate the top position based on the fret number
         // top = 200 + (fret_distance * (fingerPositionNum )); 
         // top = 200 + (75 * (fingerPositionNum)); in pixels
-        let fingerPositionNum = Number(fingerPosition); // convert the finger position to a number
+        let fingerPositionNum = Number(fingerPosition); // convert the finger position string to a number
+        console.log(`fingerPositionNum type: ${typeof fingerPositionNum}`); // number
         console.log(`Dot ${i} finger position: ${fingerPosition}, as number: ${fingerPositionNum}`);
         let top = 200 + (fret_distance * (fingerPositionNum ));
         // problem: currently returns a pointer rather than usable interger
-        // dot.style.top = `${top}px`;
+        dot.style.top = `${top}px`;
         console.log(`Dot ${i} position: ${dot.style.top}`);
 
         // set the visual dot to the changed position, from the dot loop variable 
