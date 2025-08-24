@@ -96,7 +96,6 @@ setInterval(() => {
         let randChord = getRandomChord();
         document.getElementById('randomChordOutput').textContent = randChord; // display the random chord
         // create a blinking flash to tell when a change occurs
-        // <blink>document.getElementById('randomChordOutput').style.backgroundColor = 'yellow';</blink>
         let blinking_text = document.getElementById('randomChordOutput');
         blinking_text.style.backgroundColor = 'yellow';
         setTimeout(() => {
@@ -121,9 +120,6 @@ function parseTheChord(){
     console.log("Chord Notes: " + chordNotes.join(', '));
     console.log("Chord Fingers: " + chordFingers.join(', '));
 
-    // let chordFingersArray = chordFingers.split('');
-    // console.log("Chord Fingers Array: " + chordFingersArray);
-
     return { // return the parsed components
         name: chordName,
         notes: chordNotes,
@@ -131,7 +127,7 @@ function parseTheChord(){
     };
 }
 
-// using the parsed chord information, display an overlay on the guitar image
+// using the parsed chord information, display an overlay of a fretboard, and showing finger placement
 // on the appropriate fret and string positions
 
 // TODO: develop the finger-dot placement and action functions
